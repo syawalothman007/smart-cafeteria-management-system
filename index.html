@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Cafeteria System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e8f0f7, #dceef2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #welcome {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: #b2dfdb;
+            color: #2f4f4f;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            z-index: 10;
+            animation: slideUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        #welcome img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 2.2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 0.6rem;
+            margin-bottom: 1rem;
+            border: 1px solid #b0bec5;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: #f5fafd;
+        }
+
+        button {
+            background-color: #81d4fa;
+            color: #1e2a38;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4fc3f7;
+        }
+
+        p {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #546e7a;
+        }
+
+        a {
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Animation -->
+    <div id="welcome">
+        <img src="images/logo.png" alt="Logo" />
+        Welcome to Smart Cafeteria System
+    </div>
+
+    <form method="POST" action="login.php">
+        <h2>Login</h2>
+        <input type="text" name="username" placeholder="Username" required /><br>
+        <input type="password" name="password" placeholder="Password" required /><br>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="register.php">Register here</a>.</p>
+    </form>
+
+</body>
+</html>
