@@ -11,7 +11,7 @@ Staff:
 Username: adam
 Password: 12345
 
-admin account will be given on demand
+For administrative access, please contact me.
 
 ## Project Overview
 
